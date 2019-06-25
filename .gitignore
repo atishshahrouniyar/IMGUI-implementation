@@ -1,0 +1,58 @@
+# executables and libraries
+*.exe
+*.lib
+*.dll
+*.so
+*.a
+premake/premake5
+
+# visual studio files
+.vs
+tools/.vs
+*.pdb
+*.sln
+*.vcxproj
+*.vcxproj.user
+*.vcxproj.filters
+
+# gradle
+android/bin
+.gradle
+android/karma_android/app/build
+
+
+# don't ignore android projects for visual studio
+!android/*.sln
+!android/*/*.vcxproj
+!android/*/*.vcxproj.filters
+
+# xocde files
+karma.xcworkspace/*
+
+# codelite files
+./karma.workspace
+
+# sublime text files
+*.sublime-project
+*.sublime-workspace
+
+# make files
+Makefile
+
+# project files
+project/*
+
+# binaries and build outputs
+bin/*
+tools/bin/int/*
+!tools/bin/windows/*.exe
+!tools/bin/windows/*.pdb
+
+# build files that are generated automatically
+build.bat
+build.sh
+
+# generated game assets (these are ignored, because *usually* they are not compressed and so are larger than original)
+*.t3d
+*.b3d
+
