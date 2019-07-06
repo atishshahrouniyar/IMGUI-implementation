@@ -1,8 +1,4 @@
-﻿  glad.c
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
-  d:\desktop\karma project\imgui\imgui1\glad\include\glad\glad.h(45): note: see previous definition of 'APIENTRY'
-  imgui.cpp
-  imgui_demo.cpp
+﻿  imgui.cpp
   imgui_draw.cpp
   imgui_impl_opengl3.cpp
   imgui_impl_sdl.cpp

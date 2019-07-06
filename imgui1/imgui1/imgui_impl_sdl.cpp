@@ -221,7 +221,7 @@ static void ImGui_ImplSDL2_UpdateMousePosAndButtons()
     if (io.WantSetMousePos)
         SDL_WarpMouseInWindow(g_Window, (int)io.MousePos.x, (int)io.MousePos.y);
     else
-        io.MousePos = ImVec2(-FLT_MAX, -FLT_MAX);
+        io.MousePos = Vector2(-FLT_MAX, -FLT_MAX);
 
     int mx, my;
     Uint32 mouse_buttons = SDL_GetMouseState(&mx, &my);
@@ -241,7 +241,7 @@ static void ImGui_ImplSDL2_UpdateMousePosAndButtons()
         SDL_GetGlobalMouseState(&mx, &my);
         mx -= wx;
         my -= wy;
-        io.MousePos = ImVec2((float)mx, (float)my);
+        io.MousePos = Vector2((float)mx, (float)my);
     }
 
     // SDL_CaptureMouse() let the OS know e.g. that our imgui drag outside the SDL window boundaries shouldn't e.g. trigger the OS window resize cursor.
@@ -250,7 +250,7 @@ static void ImGui_ImplSDL2_UpdateMousePosAndButtons()
     SDL_CaptureMouse(any_mouse_button_down ? SDL_TRUE : SDL_FALSE);
 #else
     if (SDL_GetWindowFlags(g_Window) & SDL_WINDOW_INPUT_FOCUS)
-        io.MousePos = ImVec2((float)mx, (float)my);
+        io.MousePos = Vector2((float)mx, (float)my);
 #endif
 }
 
@@ -325,9 +325,9 @@ void ImGui_ImplSDL2_NewFrame(SDL_Window* window)
     int display_w, display_h;
     SDL_GetWindowSize(window, &w, &h);
     SDL_GL_GetDrawableSize(window, &display_w, &display_h);
-    io.DisplaySize = ImVec2((float)w, (float)h);
+    io.DisplaySize = Vector2((float)w, (float)h);
     if (w > 0 && h > 0)
-        io.DisplayFramebufferScale = ImVec2((float)display_w / w, (float)display_h / h);
+        io.DisplayFramebufferScale = Vector2((float)display_w / w, (float)display_h / h);
 
     // Setup time step (we don't use SDL_GetTicks() because it is using millisecond resolution)
     static Uint64 frequency = SDL_GetPerformanceFrequency();
